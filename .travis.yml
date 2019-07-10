@@ -1,0 +1,14 @@
+language: bash
+
+git:
+  quiet: true
+  submodules: false
+
+matrix:
+  include:
+    - os: linux
+      dist: xenial
+
+script:
+  - sh test_bash.sh || travis_terminate 1;
+  - bash test_sourcing.sh || travis_terminate 1;
